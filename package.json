@@ -28,7 +28,6 @@
     "@types/node": "^18.7.23",
     "chai": "^4.3.6",
     "dotenv": "^16.0.2",
-    "ethereum-waffle": "^3.4.4",
     "ethers": "^5.7.1",
     "hardhat": "^2.11.2",
     "hardhat-abi-exporter": "^2.10.0",
