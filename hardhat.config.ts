@@ -10,15 +10,22 @@ import 'hardhat-spdx-license-identifier';
 
 Dotenv.config();
 
-const ETH_TEST_KEY = process.env.ETH_TEST_KEY;
-const ETHERSCAN_KEY = process.env.ETHERSCAN_KEY;
-const ETH_MAIN_KEY = process.env.ETH_MAIN_KEY;
+const { ETH_MAIN_KEY, ETH_TEST_KEY, ETHERSCAN_KEY } = process.env;
+
+const pkeyMainnet =
+  ETH_MAIN_KEY == undefined || ETH_MAIN_KEY.length == 0
+    ? 'f'.repeat(64)
+    : ETH_MAIN_KEY;
+const pkeyTestnet =
+  ETH_TEST_KEY == undefined || ETH_TEST_KEY.length == 0
+    ? 'f'.repeat(64)
+    : ETH_TEST_KEY;
 
 export default {
   solidity: {
     compilers: [
       {
-        version: '0.8.17',
+        version: '0.8.19',
         settings: {
           viaIR: true,
           optimizer: {
@@ -32,12 +39,12 @@ export default {
   networks: {
     mainnet: {
       url: `https://rpc.ankr.com/eth`,
-      accounts: [ETH_MAIN_KEY],
+      accounts: [pkeyMainnet],
       timeout: 100000,
     },
     goerli: {
       url: `https://rpc.ankr.com/eth_goerli`,
-      accounts: [ETH_TEST_KEY],
+      accounts: [pkeyTestnet],
       blockGasLimit: 120000000000,
       timeout: 300000,
     },
