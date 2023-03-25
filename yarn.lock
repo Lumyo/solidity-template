@@ -282,7 +282,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ethersproject/providers@npm:5.7.2":
+"@ethersproject/providers@npm:5.7.2, @ethersproject/providers@npm:^5.7.2":
   version: 5.7.2
   resolution: "@ethersproject/providers@npm:5.7.2"
   dependencies:
@@ -6558,6 +6558,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "solidity-template@workspace:."
   dependencies:
+    "@ethersproject/abi": ^5.7.0
+    "@ethersproject/providers": ^5.7.2
     "@nomicfoundation/hardhat-chai-matchers": ^1.0.6
     "@nomiclabs/hardhat-ethers": ^2.2.2
     "@nomiclabs/hardhat-etherscan": ^3.1.7
@@ -6583,9 +6585,7 @@ __metadata:
     typechain: ^8.1.1
     typescript: ^5.0.2
   peerDependencies:
-    "@ethersproject/abi": "*"
     "@ethersproject/bytes": "*"
-    "@ethersproject/providers": "*"
   languageName: unknown
   linkType: soft
 

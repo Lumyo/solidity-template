@@ -13,6 +13,8 @@
     "postinstall": "husky install"
   },
   "devDependencies": {
+    "@ethersproject/abi": "^5.7.0",
+    "@ethersproject/providers": "^5.7.2",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.6",
     "@nomiclabs/hardhat-ethers": "^2.2.2",
     "@nomiclabs/hardhat-etherscan": "^3.1.7",
@@ -40,8 +42,6 @@
   },
   "packageManager": "yarn@3.5.0",
   "peerDependencies": {
-    "@ethersproject/abi": "*",
-    "@ethersproject/bytes": "*",
-    "@ethersproject/providers": "*"
+    "@ethersproject/bytes": "*"
   }
 }
